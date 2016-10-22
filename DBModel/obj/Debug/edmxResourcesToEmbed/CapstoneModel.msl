@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CapstoneModelStoreContainer" CdmEntityContainer="CapstoneModelContainer">
+    <EntitySetMapping Name="Components">
+      <EntityTypeMapping TypeName="IsTypeOf(CapstoneModel.Component)">
+        <MappingFragment StoreEntitySet="Components">
+          <ScalarProperty Name="ComponentId" ColumnName="ComponentId" />
+          <ScalarProperty Name="Brand" ColumnName="Brand" />
+          <ScalarProperty Name="ModelNumber" ColumnName="ModelNumber" />
+          <ScalarProperty Name="ModelName" ColumnName="ModelName" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(CapstoneModel.Accessory)">
+        <MappingFragment StoreEntitySet="Components_Accessory">
+          <ScalarProperty Name="ComponentId" ColumnName="ComponentId" />
+          <ScalarProperty Name="AccessoryId" ColumnName="AccessoryId" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="ConnectionType" ColumnName="ConnectionType" />
+          <ScalarProperty Name="Features" ColumnName="Features" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(CapstoneModel.Case)">
+        <MappingFragment StoreEntitySet="Components_Case">
+          <ScalarProperty Name="ComponentId" ColumnName="ComponentId" />
+          <ScalarProperty Name="CaseId" ColumnName="CaseId" />
+          <ScalarProperty Name="Fans" ColumnName="Fans" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(CapstoneModel.PowerSupply)">
+        <MappingFragment StoreEntitySet="Components_PowerSupply">
+          <ScalarProperty Name="ComponentId" ColumnName="ComponentId" />
+          <ScalarProperty Name="PowerSupplyId" ColumnName="PowerSupplyId" />
+          <ScalarProperty Name="Wattage" ColumnName="Wattage" />
+          <ScalarProperty Name="Connections" ColumnName="Connections" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(CapstoneModel.Motherboard)">
+        <MappingFragment StoreEntitySet="Components_Motherboard">
+          <ScalarProperty Name="ComponentId" ColumnName="ComponentId" />
+          <ScalarProperty Name="MotherboardId" ColumnName="MotherboardId" />
+          <ScalarProperty Name="Pins" ColumnName="Pins" />
+          <ScalarProperty Name="PCISlots" ColumnName="PCISlots" />
+          <ScalarProperty Name="Connectors" ColumnName="Connectors" />
+          <ScalarProperty Name="Chips" ColumnName="Chips" />
+          <ScalarProperty Name="MemorySlots" ColumnName="MemorySlots" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(CapstoneModel.Processor)">
+        <MappingFragment StoreEntitySet="Components_Processor">
+          <ScalarProperty Name="ComponentId" ColumnName="ComponentId" />
+          <ScalarProperty Name="ProcessorId" ColumnName="ProcessorId" />
+          <ScalarProperty Name="Speed" ColumnName="Speed" />
+          <ScalarProperty Name="Memory" ColumnName="Memory" />
+          <ScalarProperty Name="Pins" ColumnName="Pins" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(CapstoneModel.Monitor)">
+        <MappingFragment StoreEntitySet="Components_Monitor">
+          <ScalarProperty Name="ComponentId" ColumnName="ComponentId" />
+          <ScalarProperty Name="MonitorId" ColumnName="MonitorId" />
+          <ScalarProperty Name="Size" ColumnName="Size" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Latency" ColumnName="Latency" />
+          <ScalarProperty Name="HasSpeakers" ColumnName="HasSpeakers" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(CapstoneModel.HardDrive)">
+        <MappingFragment StoreEntitySet="Components_HardDrive">
+          <ScalarProperty Name="ComponentId" ColumnName="ComponentId" />
+          <ScalarProperty Name="HardDriveId" ColumnName="HardDriveId" />
+          <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+          <ScalarProperty Name="IsSSD" ColumnName="IsSSD" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(CapstoneModel.RAM)">
+        <MappingFragment StoreEntitySet="Components_RAM">
+          <ScalarProperty Name="ComponentId" ColumnName="ComponentId" />
+          <ScalarProperty Name="RAMId" ColumnName="RAMId" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Memory" ColumnName="Memory" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(CapstoneModel.GraphicsCard)">
+        <MappingFragment StoreEntitySet="Components_GraphicsCard">
+          <ScalarProperty Name="ComponentId" ColumnName="ComponentId" />
+          <ScalarProperty Name="GraphicsCardId" ColumnName="GraphicsCardId" />
+          <ScalarProperty Name="GRAM" ColumnName="GRAM" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Speed" ColumnName="Speed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Builds">
+      <EntityTypeMapping TypeName="IsTypeOf(CapstoneModel.Build)">
+        <MappingFragment StoreEntitySet="Builds">
+          <ScalarProperty Name="BuildId" ColumnName="BuildId" />
+          <ScalarProperty Name="BuildName" ColumnName="BuildName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ComponentBuild" TypeName="CapstoneModel.ComponentBuild" StoreEntitySet="ComponentBuild">
+      <EndProperty Name="Component">
+        <ScalarProperty Name="ComponentId" ColumnName="Components_ComponentId" />
+      </EndProperty>
+      <EndProperty Name="Build">
+        <ScalarProperty Name="BuildId" ColumnName="Builds_BuildId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,388 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{00253938-C853-430D-BBAC-9EDE3ED99B24}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PCBuilder</RootNamespace>
+    <AssemblyName>PCBuilder</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AccessoriesController.cs" />
+    <Compile Include="Controllers\AlphaCreateController.cs" />
+    <Compile Include="Controllers\BuildsController.cs" />
+    <Compile Include="Controllers\CasesController.cs" />
+    <Compile Include="Controllers\ComponentsController.cs" />
+    <Compile Include="Controllers\Fakebuild.cs" />
+    <Compile Include="Controllers\GraphicsCardsController.cs" />
+    <Compile Include="Controllers\HardDrivesController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MonitorsController.cs" />
+    <Compile Include="Controllers\MotherboardsController.cs" />
+    <Compile Include="Controllers\PowerSuppliesController.cs" />
+    <Compile Include="Controllers\ProcessorsController.cs" />
+    <Compile Include="Controllers\RAMsController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\browseBuild.css" />
+    <Content Include="Content\createBuild.css" />
+    <Content Include="Content\images\arrow.png" />
+    <Content Include="Content\images\back.jpg" />
+    <Content Include="Content\images\back2.jpg" />
+    <Content Include="Content\images\delete.png" />
+    <Content Include="Content\images\webicon.png" />
+    <Content Include="Content\main.css" />
+    <Content Include="Content\myTemplate\css\animate.css" />
+    <Content Include="Content\myTemplate\css\fancybox-buttons.css" />
+    <Content Include="Content\myTemplate\css\fancybox-thumbs.css" />
+    <Content Include="Content\myTemplate\css\fancybox.css" />
+    <Content Include="Content\myTemplate\css\main.css" />
+    <Content Include="Content\myTemplate\css\reset.css" />
+    <Content Include="Content\myTemplate\fonts\raleway-bold.svg" />
+    <Content Include="Content\myTemplate\fonts\raleway-regular.svg" />
+    <Content Include="Content\myTemplate\fonts\raleway-semibold.svg" />
+    <Content Include="Content\myTemplate\img\billboard.jpg" />
+    <Content Include="Content\myTemplate\img\billboard2.jpg" />
+    <Content Include="Content\myTemplate\img\blog_post1.jpg" />
+    <Content Include="Content\myTemplate\img\blog_post2.jpg" />
+    <Content Include="Content\myTemplate\img\blog_post3.jpg" />
+    <Content Include="Content\myTemplate\img\blog_post4.jpg" />
+    <Content Include="Content\myTemplate\img\buildcomputer2.jpg" />
+    <Content Include="Content\myTemplate\img\buildicon.jpg" />
+    <Content Include="Content\myTemplate\img\client1.jpg" />
+    <Content Include="Content\myTemplate\img\client2.jpg" />
+    <Content Include="Content\myTemplate\img\client3.jpg" />
+    <Content Include="Content\myTemplate\img\Computer.png" />
+    <Content Include="Content\myTemplate\img\computerbuild.png" />
+    <Content Include="Content\myTemplate\img\fancybox\blank.gif" />
+    <Content Include="Content\myTemplate\img\fancybox\fancybox_loading%402x.gif" />
+    <Content Include="Content\myTemplate\img\fancybox\fancybox_loading.gif" />
+    <Content Include="Content\myTemplate\img\fancybox\fancybox_overlay.png" />
+    <Content Include="Content\myTemplate\img\fancybox\fancybox_sprite%402x.png" />
+    <Content Include="Content\myTemplate\img\fancybox\fancybox_sprite.png" />
+    <Content Include="Content\myTemplate\img\footer_logo.png" />
+    <Content Include="Content\myTemplate\img\icon1.png" />
+    <Content Include="Content\myTemplate\img\icon2.png" />
+    <Content Include="Content\myTemplate\img\icon3.png" />
+    <Content Include="Content\myTemplate\img\logo_dark.png" />
+    <Content Include="Content\myTemplate\img\logo_light.png" />
+    <Content Include="Content\myTemplate\img\parts.png" />
+    <Content Include="Content\myTemplate\img\play_btn.png" />
+    <Content Include="Content\myTemplate\img\quotes.png" />
+    <Content Include="Content\myTemplate\img\shadow.png" />
+    <Content Include="Content\myTemplate\img\testimonial_triangle.png" />
+    <Content Include="Content\myTemplate\img\video.jpg" />
+    <Content Include="Content\myTemplate\img\video_logo.png" />
+    <Content Include="Content\myTemplate\js\fancybox-buttons.js" />
+    <Content Include="Content\myTemplate\js\fancybox-media.js" />
+    <Content Include="Content\myTemplate\js\fancybox-thumbs.js" />
+    <Content Include="Content\myTemplate\js\fancybox.js" />
+    <Content Include="Content\myTemplate\js\jquery.js" />
+    <Content Include="Content\myTemplate\js\main.js" />
+    <Content Include="Content\myTemplate\js\wow.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\myTemplate\fonts\raleway-bold.eot" />
+    <Content Include="Content\myTemplate\fonts\raleway-bold.ttf" />
+    <Content Include="Content\myTemplate\fonts\raleway-bold.woff" />
+    <Content Include="Content\myTemplate\fonts\raleway-regular.eot" />
+    <Content Include="Content\myTemplate\fonts\raleway-regular.ttf" />
+    <Content Include="Content\myTemplate\fonts\raleway-regular.woff" />
+    <Content Include="Content\myTemplate\fonts\raleway-semibold.eot" />
+    <Content Include="Content\myTemplate\fonts\raleway-semibold.ttf" />
+    <Content Include="Content\myTemplate\fonts\raleway-semibold.woff" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Components\Create.cshtml" />
+    <Content Include="Views\Components\Delete.cshtml" />
+    <Content Include="Views\Components\Details.cshtml" />
+    <Content Include="Views\Components\Edit.cshtml" />
+    <Content Include="Views\Components\Index.cshtml" />
+    <Content Include="Views\Builds\Create.cshtml" />
+    <Content Include="Views\Builds\Delete.cshtml" />
+    <Content Include="Views\Builds\Details.cshtml" />
+    <Content Include="Views\Builds\Edit.cshtml" />
+    <Content Include="Views\Builds\Index.cshtml" />
+    <Content Include="Views\Processors\Create.cshtml" />
+    <Content Include="Views\Processors\Delete.cshtml" />
+    <Content Include="Views\Processors\Details.cshtml" />
+    <Content Include="Views\Processors\Edit.cshtml" />
+    <Content Include="Views\Processors\Index.cshtml" />
+    <Content Include="Views\Home\Test.cshtml" />
+    <Content Include="Views\Shared\_mytemplate.cshtml" />
+    <Content Include="Views\test2.cshtml" />
+    <Content Include="Views\Accessories\Create.cshtml" />
+    <Content Include="Views\Accessories\Delete.cshtml" />
+    <Content Include="Views\Accessories\Details.cshtml" />
+    <Content Include="Views\Accessories\Edit.cshtml" />
+    <Content Include="Views\Accessories\Index.cshtml" />
+    <Content Include="Views\Cases\Create.cshtml" />
+    <Content Include="Views\Cases\Delete.cshtml" />
+    <Content Include="Views\Cases\Details.cshtml" />
+    <Content Include="Views\Cases\Edit.cshtml" />
+    <Content Include="Views\Cases\Index.cshtml" />
+    <Content Include="Views\GraphicsCards\Create.cshtml" />
+    <Content Include="Views\GraphicsCards\Delete.cshtml" />
+    <Content Include="Views\GraphicsCards\Details.cshtml" />
+    <Content Include="Views\GraphicsCards\Edit.cshtml" />
+    <Content Include="Views\GraphicsCards\Index.cshtml" />
+    <Content Include="Views\HardDrives\Create.cshtml" />
+    <Content Include="Views\HardDrives\Delete.cshtml" />
+    <Content Include="Views\HardDrives\Details.cshtml" />
+    <Content Include="Views\HardDrives\Edit.cshtml" />
+    <Content Include="Views\HardDrives\Index.cshtml" />
+    <Content Include="Views\Monitors\Create.cshtml" />
+    <Content Include="Views\Monitors\Delete.cshtml" />
+    <Content Include="Views\Monitors\Details.cshtml" />
+    <Content Include="Views\Monitors\Edit.cshtml" />
+    <Content Include="Views\Monitors\Index.cshtml" />
+    <Content Include="Views\Motherboards\Create.cshtml" />
+    <Content Include="Views\Motherboards\Delete.cshtml" />
+    <Content Include="Views\Motherboards\Details.cshtml" />
+    <Content Include="Views\Motherboards\Edit.cshtml" />
+    <Content Include="Views\Motherboards\Index.cshtml" />
+    <Content Include="Views\PowerSupplies\Create.cshtml" />
+    <Content Include="Views\PowerSupplies\Delete.cshtml" />
+    <Content Include="Views\PowerSupplies\Details.cshtml" />
+    <Content Include="Views\PowerSupplies\Edit.cshtml" />
+    <Content Include="Views\PowerSupplies\Index.cshtml" />
+    <Content Include="Views\RAMs\Create.cshtml" />
+    <Content Include="Views\RAMs\Delete.cshtml" />
+    <Content Include="Views\RAMs\Details.cshtml" />
+    <Content Include="Views\RAMs\Edit.cshtml" />
+    <Content Include="Views\RAMs\Index.cshtml" />
+    <Content Include="Views\Fakebuild\Create.cshtml" />
+    <Content Include="Views\Fakebuild\Delete.cshtml" />
+    <Content Include="Views\Fakebuild\Details.cshtml" />
+    <Content Include="Views\Fakebuild\Edit.cshtml" />
+    <Content Include="Views\Fakebuild\Index.cshtml" />
+    <Content Include="Views\AlphaCreate\Create.cshtml" />
+    <Content Include="Views\AlphaCreate\Delete.cshtml" />
+    <Content Include="Views\AlphaCreate\Details.cshtml" />
+    <Content Include="Views\AlphaCreate\Edit.cshtml" />
+    <Content Include="Views\AlphaCreate\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+    <Folder Include="Views\Test\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DBModel\DBModel.csproj">
+      <Project>{4c4dad37-fefa-4863-a264-9936991cb864}</Project>
+      <Name>DBModel</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>11040</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:11040/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

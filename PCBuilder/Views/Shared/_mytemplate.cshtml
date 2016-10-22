@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <!-- Grab the css files in myTemplate Folder-->
+    <meta charset="utf-8">
+    <meta name="author" content="pixelhint.com">
+    <meta name="description" content="Sublime Stunning free HTML5/CSS3 website template" />
+    <link rel="stylesheet" type="text/css"   href="../../../Content/myTemplate/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../../Content/myTemplate/css/fancybox-thumbs.css">
+    <link rel="stylesheet" type="text/css" href="../../../Content/myTemplate/css/fancybox-buttons.css">
+    <link rel="stylesheet" type="text/css" href="../../../Content/myTemplate/css/fancybox.css">
+    <link rel="stylesheet" type="text/css" href="../../../Content/myTemplate/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="../../../Content/myTemplate/css/main.css">
+       
+    <!--Grab the js files in the myTemplate folder-->
+    <script type="text/javascript" src="@Url.Content("~/Content/myTemplate/")js/jquery.js"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/myTemplate/")js/fancybox.js"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/myTemplate/")js/fancybox-buttons.js"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/myTemplate/")js/fancybox-media.js"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/myTemplate/")js/fancybox-thumbs.js"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/myTemplate/")js/wow.js"></script>
+    <script type="text/javascript" src="@Url.Content("~/Content/myTemplate/")js/main.js"></script>
+
+    <section class="billboard dark">
+        <header class="wrapper dark">
+           <!-- <a href="#"><img class="logo" id="iconimg"src="@Url.Content("~/Content/myTemplate/")img/buildicon.jpg" alt="" /></a>-->
+            <nav>
+                <ul>
+                    <li><a href="../../Home/Index">Homepage</a></li>
+                    <li><a href="">Browse @ViewBag.Title; </a></li>
+                    <li><a href="">Personal @ViewBag.Title</a></li>
+                    <li><a href="">Browse Parts</a></li>
+                    <li><a href="~/Views/UserLogin/UserLogin.cshtml">Login</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="caption dark animated wow fadeInDown clearfix">
+            <h1>Chose from the hottest @ViewBag.Title!</h1>
+            <p></p>
+            <hr>
+        </div>
+        <div class="shadow"></div>
+    </section>
+
+        <div>
+            @RenderBody()
+        </div>
+</body>
+</html>

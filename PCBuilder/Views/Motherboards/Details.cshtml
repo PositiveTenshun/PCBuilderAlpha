@@ -1,0 +1,123 @@
+﻿@model DBModel.Motherboard
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_mytemplate.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Motherboard</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Brand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Brand)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModelNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModelNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModelName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModelName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MotherboardId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MotherboardId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pins)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pins)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PCISlots)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PCISlots)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Connectors)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Connectors)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Chips)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Chips)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MemorySlots)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MemorySlots)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ComponentId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

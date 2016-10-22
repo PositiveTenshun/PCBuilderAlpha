@@ -1,0 +1,228 @@
+﻿
+@model DBModel.Build
+
+@{
+    ViewBag.Title = "Create";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <Title>PCBuilda</Title>
+    <!--        this is for the icon beside the title and the css-->
+    <link rel="shortcut icon" type="image/x-icon" href="../../../Content/imageswebicon.png" />
+    <link rel="stylesheet" type="text/css" href="../../../Content/createBuild.css" />
+    <!--        this gets the fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+
+    <!--        this is for the nav bars-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--        For the side navigation menu-->
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";
+            document.body.style.backgroundColor = "white";
+        }
+    </script>
+</head>
+
+<body id="main">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">PCBuilder</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a class="active" href="../../Home/Index">Home</a></li>
+                    <li>@Html.ActionLink("Create Build", "Create", "Builds")</li>
+                    <li>@Html.ActionLink("Browse Builds", "Index", "Builds")</li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">BrowseParts<span class="caret"></span></a>
+                        <ul class="dropdown-menu" id="dropMenu">
+                            <li><a href="../../Processors/Index">CPU</a></li>
+                            <li><a href="../../Motherboards/Index">Motherboard</a></li>
+                            <li><a href="../../RAMs/Index">Memory</a></li>
+                            <li><a href="../../HardDrives/Index">Storage</a></li>
+                            <li><a href="../../GraphicsCards/Index">Video Card</a></li>
+                            <li><a href="../../PowerSupplies/Index">Power Supply</a></li>
+                            <li><a href="../../Cases/Index">Case</a></li>
+                            <li><a href="../../Monitors/Index">Monitors</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="Register.html"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+                    <li><a href="Login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="Login.html">Login</a>
+        <a href="Register.html">Register</a>
+        <a>@Html.ActionLink("Create Build", "Create", "Builds")</a>
+        <a>@Html.ActionLink("Browse Builds", "Index", "Builds")</a>
+        <a href="browseParts.html">Browse Parts</a>
+        <a href="currentBuild.html">Current Build</a>
+
+    </div>
+    <span id="sideBar" style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+
+
+
+
+
+
+
+    <section>
+        <table id="partsTable">
+            <tr><th colspan="3">Component</th></tr>
+            <tr><td>Part 1</td> <td>Part 2</td><td>Part 3</td></tr>
+            <tr><td>Part 1</td><td>Part 2</td><td>Part 3</td></tr>
+            <tr><td>Part 1</td><td>Part 2</td><td>Part 3</td></tr>
+
+        </table>
+
+
+
+        <ul class="pagination">
+            <li><a href="#">«</a></li>
+            <li><a class="active" href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">6</a></li>
+            <li><a href="#">7</a></li>
+            <li><a href="#">»</a></li>
+        </ul>
+    </section>
+
+    <article>
+        <div id="displaySelectedItem">
+            PART INFO TO BE LISTED HERE
+        </div>
+    </article>
+
+    <div id="currentBuild">
+        <table class="currentParts">
+            <tr>
+                <td>Monitor</td>
+                <td>CPU</td>
+                <td>CPU Cooler</td>
+                <td>Motherboard</td>
+                <td>Memory</td>
+                <td>Operating System</td>
+                <td>Keyboard</td>
+                <td>Power Supply</td>
+                <td>Storage</td>
+                <td>External Storage</td>
+                <td>Cards</td>
+                <td>Peripherals</td>
+                <td>Accessories</td>
+            </tr>
+        </table>
+        <button class="button"><span>Save</span></button>
+    </div>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Build</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.BuildName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.BuildName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.BuildName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Rating, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Rating, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Rating, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TotalPrice, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TotalPrice, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TotalPrice, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}*@

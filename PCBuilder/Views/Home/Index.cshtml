@@ -1,0 +1,104 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<html>
+<head>
+    <Title>PCBuilda</Title>
+    <!--        this is for the icon beside the title and the css-->
+    <link rel="shortcut icon" type="image/x-icon" href="../../../Content/images/webicon.png" />
+    <link rel="stylesheet" type="text/css" href="../../../Content/main.css">
+    <!--        this gets the fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+
+    <!--        this is for the nav bars-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--        For the side navigation menu-->
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";
+            document.body.style.backgroundColor = "white";
+        }
+    </script>
+</head>
+
+<body id="main">
+
+
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" href="#">PCBuilder</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a class="active" href="../../Home/Index">Home</a></li>
+                    <li>@Html.ActionLink("Create Build", "Create", "Builds")</li>
+                    <li>@Html.ActionLink("Browse Builds", "Index", "Builds")</li>
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">BrowseParts<span class="caret"></span></a>
+                        <ul class="dropdown-menu" id="stupid">
+                            <li><a href="../../Processors/Index">CPU</a></li>
+                            <li><a href="../../Motherboards/Index">Motherboard</a></li>
+                            <li><a href="../../RAMs/Index">Memory</a></li>
+                            <li><a href="../../HardDrives/Index">Storage</a></li>
+                            <li><a href="../../GraphicsCards/Index">Video Card</a></li>
+                            <li><a href="../../PowerSupplies/Index">Power Supply</a></li>
+                            <li><a href="../../Cases/Index">Case</a></li>
+                            <li><a href="../../Monitors/Index">Monitors</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="Register.html"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+                    <li><a href="Login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="Login.html">Login</a>
+        <a href="Register.html">Register</a>
+        <a href="../../Builds/Create">Create A Build</a>
+        <a href="../../Builds/Index">Browse Builds</a>
+        <a href="browseParts.html">Browse Parts</a>
+        <a href="currentBuild.html">Current Build</a>
+        <!--    <img src="webicon.png">-->
+    </div>
+
+    <h1>
+        PC Builder
+    </h1>
+
+    <footer>
+        Copyright © PCBuilder.com
+    </footer>
+
+    <span style="font-size:30px;cursor:pointer"
+          onclick="openNav()">&#9776;</span>
+
+
+</body>
+</html> 

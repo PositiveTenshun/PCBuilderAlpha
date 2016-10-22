@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="CapstoneModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="CapstoneModelContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Components" EntityType="CapstoneModel.Component" />
+    <EntitySet Name="Builds" EntityType="CapstoneModel.Build" />
+    <AssociationSet Name="ComponentBuild" Association="CapstoneModel.ComponentBuild">
+      <End Role="Component" EntitySet="Components" />
+      <End Role="Build" EntitySet="Builds" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Component">
+    <Key>
+      <PropertyRef Name="ComponentId" />
+    </Key>
+    <Property Name="ComponentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Brand" Type="String" Nullable="false" />
+    <Property Name="ModelNumber" Type="String" Nullable="false" />
+    <Property Name="ModelName" Type="String" Nullable="false" />
+    <Property Name="Rating" Type="String" Nullable="false" />
+    <Property Name="ProductCode" Type="String" Nullable="false" />
+    <Property Name="Price" Type="String" Nullable="false" />
+    <NavigationProperty Name="Builds" Relationship="CapstoneModel.ComponentBuild" FromRole="Component" ToRole="Build" />
+  </EntityType>
+  <EntityType Name="Build">
+    <Key>
+      <PropertyRef Name="BuildId" />
+    </Key>
+    <Property Name="BuildId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BuildName" Type="String" Nullable="false" />
+    <Property Name="Description" Type="String" Nullable="false" />
+    <Property Name="Rating" Type="String" Nullable="false" />
+    <Property Name="TotalPrice" Type="String" Nullable="false" />
+    <NavigationProperty Name="Components" Relationship="CapstoneModel.ComponentBuild" FromRole="Build" ToRole="Component" />
+  </EntityType>
+  <Association Name="ComponentBuild">
+    <End Type="CapstoneModel.Component" Role="Component" Multiplicity="*" />
+    <End Type="CapstoneModel.Build" Role="Build" Multiplicity="*" />
+  </Association>
+  <EntityType Name="Accessory" BaseType="CapstoneModel.Component">
+    <Property Name="AccessoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="String" Nullable="false" />
+    <Property Name="ConnectionType" Type="String" Nullable="false" />
+    <Property Name="Features" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Case" BaseType="CapstoneModel.Component">
+    <Property Name="CaseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fans" Type="String" Nullable="false" />
+    <Property Name="Size" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PowerSupply" BaseType="CapstoneModel.Component">
+    <Property Name="PowerSupplyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Wattage" Type="String" Nullable="false" />
+    <Property Name="Connections" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Motherboard" BaseType="CapstoneModel.Component">
+    <Property Name="MotherboardId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Pins" Type="String" Nullable="false" />
+    <Property Name="PCISlots" Type="String" Nullable="false" />
+    <Property Name="Connectors" Type="String" Nullable="false" />
+    <Property Name="Chips" Type="String" Nullable="false" />
+    <Property Name="MemorySlots" Type="String" Nullable="false" />
+    <Property Name="Type" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Processor" BaseType="CapstoneModel.Component">
+    <Property Name="ProcessorId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Speed" Type="String" Nullable="false" />
+    <Property Name="Memory" Type="String" Nullable="false" />
+    <Property Name="Pins" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Monitor" BaseType="CapstoneModel.Component">
+    <Property Name="MonitorId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Size" Type="String" Nullable="false" />
+    <Property Name="Type" Type="String" Nullable="false" />
+    <Property Name="Latency" Type="String" Nullable="false" />
+    <Property Name="HasSpeakers" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HardDrive" BaseType="CapstoneModel.Component">
+    <Property Name="HardDriveId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Capacity" Type="String" Nullable="false" />
+    <Property Name="IsSSD" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RAM" BaseType="CapstoneModel.Component">
+    <Property Name="RAMId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="String" Nullable="false" />
+    <Property Name="Memory" Type="String" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GraphicsCard" BaseType="CapstoneModel.Component">
+    <Property Name="GraphicsCardId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GRAM" Type="String" Nullable="false" />
+    <Property Name="Type" Type="String" Nullable="false" />
+    <Property Name="Speed" Type="String" Nullable="false" />
+  </EntityType>
+</Schema>

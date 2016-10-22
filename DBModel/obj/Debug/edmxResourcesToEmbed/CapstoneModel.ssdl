@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CapstoneModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="CapstoneModelStoreContainer">
+    <EntitySet Name="Components" EntityType="CapstoneModel.Store.Components" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Builds" EntityType="CapstoneModel.Store.Builds" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Components_Accessory" EntityType="CapstoneModel.Store.Components_Accessory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Components_Case" EntityType="CapstoneModel.Store.Components_Case" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Components_PowerSupply" EntityType="CapstoneModel.Store.Components_PowerSupply" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Components_Motherboard" EntityType="CapstoneModel.Store.Components_Motherboard" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Components_Processor" EntityType="CapstoneModel.Store.Components_Processor" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Components_Monitor" EntityType="CapstoneModel.Store.Components_Monitor" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Components_HardDrive" EntityType="CapstoneModel.Store.Components_HardDrive" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Components_RAM" EntityType="CapstoneModel.Store.Components_RAM" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Components_GraphicsCard" EntityType="CapstoneModel.Store.Components_GraphicsCard" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ComponentBuild" EntityType="CapstoneModel.Store.ComponentBuild" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_ComponentBuild_Component" Association="CapstoneModel.Store.FK_ComponentBuild_Component">
+      <End Role="Component" EntitySet="Components" />
+      <End Role="ComponentBuild" EntitySet="ComponentBuild" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ComponentBuild_Build" Association="CapstoneModel.Store.FK_ComponentBuild_Build">
+      <End Role="Build" EntitySet="Builds" />
+      <End Role="ComponentBuild" EntitySet="ComponentBuild" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Accessory_inherits_Component" Association="CapstoneModel.Store.FK_Accessory_inherits_Component">
+      <End Role="Component" EntitySet="Components" />
+      <End Role="Accessory" EntitySet="Components_Accessory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Case_inherits_Component" Association="CapstoneModel.Store.FK_Case_inherits_Component">
+      <End Role="Component" EntitySet="Components" />
+      <End Role="Case" EntitySet="Components_Case" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PowerSupply_inherits_Component" Association="CapstoneModel.Store.FK_PowerSupply_inherits_Component">
+      <End Role="Component" EntitySet="Components" />
+      <End Role="PowerSupply" EntitySet="Components_PowerSupply" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Motherboard_inherits_Component" Association="CapstoneModel.Store.FK_Motherboard_inherits_Component">
+      <End Role="Component" EntitySet="Components" />
+      <End Role="Motherboard" EntitySet="Components_Motherboard" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Processor_inherits_Component" Association="CapstoneModel.Store.FK_Processor_inherits_Component">
+      <End Role="Component" EntitySet="Components" />
+      <End Role="Processor" EntitySet="Components_Processor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Monitor_inherits_Component" Association="CapstoneModel.Store.FK_Monitor_inherits_Component">
+      <End Role="Component" EntitySet="Components" />
+      <End Role="Monitor" EntitySet="Components_Monitor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HardDrive_inherits_Component" Association="CapstoneModel.Store.FK_HardDrive_inherits_Component">
+      <End Role="Component" EntitySet="Components" />
+      <End Role="HardDrive" EntitySet="Components_HardDrive" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RAM_inherits_Component" Association="CapstoneModel.Store.FK_RAM_inherits_Component">
+      <End Role="Component" EntitySet="Components" />
+      <End Role="RAM" EntitySet="Components_RAM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GraphicsCard_inherits_Component" Association="CapstoneModel.Store.FK_GraphicsCard_inherits_Component">
+      <End Role="Component" EntitySet="Components" />
+      <End Role="GraphicsCard" EntitySet="Components_GraphicsCard" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Components">
+    <Key>
+      <PropertyRef Name="ComponentId" />
+    </Key>
+    <Property Name="ComponentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Brand" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ModelNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ModelName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Rating" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ProductCode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Price" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Builds">
+    <Key>
+      <PropertyRef Name="BuildId" />
+    </Key>
+    <Property Name="BuildId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BuildName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Rating" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TotalPrice" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Components_Accessory">
+    <Key>
+      <PropertyRef Name="ComponentId" />
+    </Key>
+    <Property Name="AccessoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ConnectionType" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Features" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ComponentId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Components_Case">
+    <Key>
+      <PropertyRef Name="ComponentId" />
+    </Key>
+    <Property Name="CaseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fans" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Size" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ComponentId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Components_PowerSupply">
+    <Key>
+      <PropertyRef Name="ComponentId" />
+    </Key>
+    <Property Name="PowerSupplyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Wattage" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Connections" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ComponentId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Components_Motherboard">
+    <Key>
+      <PropertyRef Name="ComponentId" />
+    </Key>
+    <Property Name="MotherboardId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Pins" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PCISlots" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Connectors" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Chips" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MemorySlots" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ComponentId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Components_Processor">
+    <Key>
+      <PropertyRef Name="ComponentId" />
+    </Key>
+    <Property Name="ProcessorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Speed" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Memory" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Pins" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ComponentId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Components_Monitor">
+    <Key>
+      <PropertyRef Name="ComponentId" />
+    </Key>
+    <Property Name="MonitorId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Size" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Latency" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="HasSpeakers" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ComponentId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Components_HardDrive">
+    <Key>
+      <PropertyRef Name="ComponentId" />
+    </Key>
+    <Property Name="HardDriveId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Capacity" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="IsSSD" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ComponentId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Components_RAM">
+    <Key>
+      <PropertyRef Name="ComponentId" />
+    </Key>
+    <Property Name="RAMId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Memory" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ComponentId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Components_GraphicsCard">
+    <Key>
+      <PropertyRef Name="ComponentId" />
+    </Key>
+    <Property Name="GraphicsCardId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GRAM" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Type" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Speed" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ComponentId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ComponentBuild">
+    <Key>
+      <PropertyRef Name="Components_ComponentId" />
+      <PropertyRef Name="Builds_BuildId" />
+    </Key>
+    <Property Name="Components_ComponentId" Type="int" Nullable="false" />
+    <Property Name="Builds_BuildId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ComponentBuild_Component">
+    <End Role="Component" Type="CapstoneModel.Store.Components" Multiplicity="1" />
+    <End Role="ComponentBuild" Type="CapstoneModel.Store.ComponentBuild" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Component">
+        <PropertyRef Name="ComponentId" />
+      </Principal>
+      <Dependent Role="ComponentBuild">
+        <PropertyRef Name="Components_ComponentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ComponentBuild_Build">
+    <End Role="ComponentBuild" Type="CapstoneModel.Store.ComponentBuild" Multiplicity="*" />
+    <End Role="Build" Type="CapstoneModel.Store.Builds" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Build">
+        <PropertyRef Name="BuildId" />
+      </Principal>
+      <Dependent Role="ComponentBuild">
+        <PropertyRef Name="Builds_BuildId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Accessory_inherits_Component">
+    <End Role="Component" Type="CapstoneModel.Store.Components" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Accessory" Type="CapstoneModel.Store.Components_Accessory" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Component">
+        <PropertyRef Name="ComponentId" />
+      </Principal>
+      <Dependent Role="Accessory">
+        <PropertyRef Name="ComponentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Case_inherits_Component">
+    <End Role="Component" Type="CapstoneModel.Store.Components" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Case" Type="CapstoneModel.Store.Components_Case" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Component">
+        <PropertyRef Name="ComponentId" />
+      </Principal>
+      <Dependent Role="Case">
+        <PropertyRef Name="ComponentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PowerSupply_inherits_Component">
+    <End Role="Component" Type="CapstoneModel.Store.Components" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PowerSupply" Type="CapstoneModel.Store.Components_PowerSupply" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Component">
+        <PropertyRef Name="ComponentId" />
+      </Principal>
+      <Dependent Role="PowerSupply">
+        <PropertyRef Name="ComponentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Motherboard_inherits_Component">
+    <End Role="Component" Type="CapstoneModel.Store.Components" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Motherboard" Type="CapstoneModel.Store.Components_Motherboard" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Component">
+        <PropertyRef Name="ComponentId" />
+      </Principal>
+      <Dependent Role="Motherboard">
+        <PropertyRef Name="ComponentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Processor_inherits_Component">
+    <End Role="Component" Type="CapstoneModel.Store.Components" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Processor" Type="CapstoneModel.Store.Components_Processor" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Component">
+        <PropertyRef Name="ComponentId" />
+      </Principal>
+      <Dependent Role="Processor">
+        <PropertyRef Name="ComponentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Monitor_inherits_Component">
+    <End Role="Component" Type="CapstoneModel.Store.Components" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Monitor" Type="CapstoneModel.Store.Components_Monitor" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Component">
+        <PropertyRef Name="ComponentId" />
+      </Principal>
+      <Dependent Role="Monitor">
+        <PropertyRef Name="ComponentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HardDrive_inherits_Component">
+    <End Role="Component" Type="CapstoneModel.Store.Components" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="HardDrive" Type="CapstoneModel.Store.Components_HardDrive" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Component">
+        <PropertyRef Name="ComponentId" />
+      </Principal>
+      <Dependent Role="HardDrive">
+        <PropertyRef Name="ComponentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RAM_inherits_Component">
+    <End Role="Component" Type="CapstoneModel.Store.Components" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="RAM" Type="CapstoneModel.Store.Components_RAM" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Component">
+        <PropertyRef Name="ComponentId" />
+      </Principal>
+      <Dependent Role="RAM">
+        <PropertyRef Name="ComponentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GraphicsCard_inherits_Component">
+    <End Role="Component" Type="CapstoneModel.Store.Components" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="GraphicsCard" Type="CapstoneModel.Store.Components_GraphicsCard" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Component">
+        <PropertyRef Name="ComponentId" />
+      </Principal>
+      <Dependent Role="GraphicsCard">
+        <PropertyRef Name="ComponentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

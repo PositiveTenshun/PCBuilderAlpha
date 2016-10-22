@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="163203bebe4d4173ba95493e06566210" Name="Diagram1" ZoomLevel="74" >
+        <EntityTypeShape EntityType="CapstoneModel.Component" Width="1.5" PointX="11" PointY="3.25" />
+        <EntityTypeShape EntityType="CapstoneModel.Build" Width="1.5" PointX="11" PointY="0.5" />
+        <AssociationConnector Association="CapstoneModel.ComponentBuild" />
+        <EntityTypeShape EntityType="CapstoneModel.Accessory" Width="1.5" PointX="13.375" PointY="3.375" />
+        <EntityTypeShape EntityType="CapstoneModel.Case" Width="1.5" PointX="13.375" PointY="5.625" />
+        <EntityTypeShape EntityType="CapstoneModel.PowerSupply" Width="1.5" PointX="10.875" PointY="7.125" />
+        <EntityTypeShape EntityType="CapstoneModel.Motherboard" Width="1.5" PointX="8.75" PointY="1.875" />
+        <EntityTypeShape EntityType="CapstoneModel.Processor" Width="1.5" PointX="8.75" PointY="4.75" />
+        <EntityTypeShape EntityType="CapstoneModel.Monitor" Width="1.5" PointX="8.75" PointY="7.25" />
+        <EntityTypeShape EntityType="CapstoneModel.HardDrive" Width="1.5" PointX="13.375" PointY="1" />
+        <EntityTypeShape EntityType="CapstoneModel.RAM" Width="1.5" PointX="13.375" PointY="7.75" />
+        <EntityTypeShape EntityType="CapstoneModel.GraphicsCard" Width="1.5" PointX="15.625" PointY="5.375" />
+        <InheritanceConnector EntityType="CapstoneModel.Accessory" />
+        <InheritanceConnector EntityType="CapstoneModel.Case" />
+        <InheritanceConnector EntityType="CapstoneModel.GraphicsCard" />
+        <InheritanceConnector EntityType="CapstoneModel.HardDrive" />
+        <InheritanceConnector EntityType="CapstoneModel.Monitor" />
+        <InheritanceConnector EntityType="CapstoneModel.Motherboard" />
+        <InheritanceConnector EntityType="CapstoneModel.PowerSupply" />
+        <InheritanceConnector EntityType="CapstoneModel.Processor" />
+        <InheritanceConnector EntityType="CapstoneModel.RAM" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

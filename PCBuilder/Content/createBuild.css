@@ -1,0 +1,193 @@
+#dropMenu{
+    background-color: #333;
+}
+#dropMenu a{
+    color: aliceblue
+}
+#dropMenu a:hover{
+    background-color: #0276FD;
+}
+
+body {
+    font-family: 'Droid Sans', Helvetica, Arial, sans-serif;
+ font-size: 14px;
+ line-height: 25px;  
+    background: url(images/back2.jpg);
+    background-size: auto;
+}
+    
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: red;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+    
+
+
+ul {
+    list-style-type:none;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+}
+
+
+li {
+    float: left;
+ 
+}
+li:hover{
+    background-color: #0276FD;
+}
+
+ul.pagination {
+    display: inline-block;
+    padding: 0;
+    margin: 10px;
+    
+        
+    
+}
+
+
+
+ul.pagination li a {
+    color: aliceblue;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    background-color: #333;
+   
+    border: 1px solid #ddd;
+}
+
+.pagination li:first-child a {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.pagination li:last-child a {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+ul.pagination li a.active {
+    background-color: #0276FD;
+    color: white;
+    border: 1px solid #0276FD;
+}
+
+ul.pagination li a:hover:not(.active) {background-color: #0276FD;}
+
+#sideBar{
+    float:left;
+}
+section{
+    float: left;
+}
+
+#partsTable{
+    width:50%;
+    height:50%;
+}
+
+
+
+
+
+table tr td {
+    border: solid;
+    padding: 100px; 
+    width: 100px;
+    background-color: #333;
+    color: aliceblue;
+}
+
+table tr td:hover{
+    background-color: #0276FD;
+}
+
+#displaySelectedItem{
+    float:right;
+    height: 728px;
+    width: 50%;
+    border: solid;
+    overflow: auto;
+    margin-right: 200px;
+    margin-top: 21px;
+}
+
+#currentBuild{
+   position:absolute;
+   bottom: 0;
+   width:100%;
+   height: 5%;
+   text-align: center;
+    
+    
+}
+.currentParts{
+    width:100%;
+}
+
+
+.currentParts tr td{
+    display: inline;
+    border: solid white;
+    padding: 1%;
+    width: 5%;
+    background-color: #333;
+    color:aliceblue;
+    
+}
+.button {
+    float:right;
+  border-radius: 10px;
+  background-color: #333;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 18px;
+  padding: 5px;
+  width: 100px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 1%;
+}
+.button:hover{
+    background-color: #0276FD;
+
+}

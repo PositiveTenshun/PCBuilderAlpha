@@ -1,0 +1,10 @@
+C:\Users\Scott Hache\Source\Workspaces\PCBuilder\PCBuilder\DBModel\bin\Debug\DBModel.dll.config
+C:\Users\Scott Hache\Source\Workspaces\PCBuilder\PCBuilder\DBModel\bin\Debug\DBModel.dll
+C:\Users\Scott Hache\Source\Workspaces\PCBuilder\PCBuilder\DBModel\bin\Debug\DBModel.pdb
+C:\Users\Scott Hache\Source\Workspaces\PCBuilder\PCBuilder\DBModel\bin\Debug\EntityFramework.dll
+C:\Users\Scott Hache\Source\Workspaces\PCBuilder\PCBuilder\DBModel\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Scott Hache\Source\Workspaces\PCBuilder\PCBuilder\DBModel\bin\Debug\EntityFramework.xml
+C:\Users\Scott Hache\Source\Workspaces\PCBuilder\PCBuilder\DBModel\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Scott Hache\Source\Workspaces\PCBuilder\PCBuilder\DBModel\obj\Debug\DBModel.dll
+C:\Users\Scott Hache\Source\Workspaces\PCBuilder\PCBuilder\DBModel\obj\Debug\DBModel.pdb
+C:\Users\Scott Hache\Source\Workspaces\PCBuilder\PCBuilder\DBModel\obj\Debug\DBModel.csprojResolveAssemblyReference.cache
